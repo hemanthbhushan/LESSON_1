@@ -1,13 +1,13 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-const PORT = process.env.Port || 3500;
+const PORT = process.env.PORT || 3500;
 
-app.use(express.json())
+app.use(express.json());
 
 //this is to get the constant files like css , when the file is loaded the
-//css will be applied to the website 
-app.use("/", express.static('/',path.join(__dirname, "public")));
+//css will be applied to the website
+app.use("/", express.static(path.join(__dirname, "public")));
 
 // here we are using the routes for the middle ware
 app.use("/", require("./routes/root"));
